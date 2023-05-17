@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <title>Gestor de Portfólio p/ Criptomoedas</title>
+  
+	<!-- Vendors Style-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/vendors_css.css') }}">
+	  
+	<!-- Style-->    
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/horizontal-menu.css') }}"> 
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/skin_color.css') }}">	
+
+</head>
+<body class="layout-top-nav dark-skin theme-primary fixed">
+	
+<div class="wrapper">
+	<div id="loader"></div>
+
+  <header class="main-header">
+	  <div class="inside-header">
+		<!-- Logomarca -->
+		<div class="d-flex align-items-center logo-box justify-content-start">
+			<!-- Logo -->
+			<a href="{{ url_for('principal') }}" class="logo">
+			  <!-- logo -->
+			  <div class="logo-lg">
+				  <span class="light-logo"><img src="{{ url_for('static', filename='images/logo-dark-text.png') }}" alt="logo"></span>
+				  <span class="dark-logo"><img src="{{ url_for('static', filename='images/logo-light-text.png') }}" alt="logo"></span>
+			  </div>
+			</a>	
+		</div>  
+		<!-- Header Navbar -->
+		<nav class="navbar navbar-static-top">
+		  <!-- Área de Pesquisa -->
+		  <div class="app-menu">
+			<ul class="header-megamenu nav">
+				<li class="btn-group d-lg-inline-flex d-none">
+					<div class="app-menu">
+						<div class="search-bx mx-5">
+							<form>
+								<div class="input-group">
+								  <input type="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="button-addon2">
+								  <div class="input-group-append">
+									<button class="btn" type="submit" id="button-addon3"><i data-feather="search"></i></button>
+								  </div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</li>
+			</ul> 
+		  </div>
+
+		  <div class="navbar-custom-menu r-side">
+			
+			<ul class="nav navbar-nav">	
+				<!-- Botão Acender/Apagar Luz -->
+				<li class="btn-group d-md-inline-flex d-none">
+				  <a href="javascript:void(0)" title="Apagar/Acender Luz" class="waves-effect skin-toggle waves-light">
+					<label class="switch">
+						<input type="checkbox" data-mainsidebarskin="toggle" id="toggle_left_sidebar_skin">
+						<span class="switch-on"><i class="mdi mdi-lightbulb-on"></i></span>
+						<span class="switch-off"><i class="mdi mdi-lightbulb"></i></span>
+					</label>
+				  </a>
+
+				</li>
+				
+				<!-- Botão Tela Cheia -->
+				<li class="btn-group d-lg-inline-flex d-none">
+					<a href="#" data-provide="fullscreen" class="waves-effect waves-light full-screen btn-warning-light" title="Tela cheia">
+						<i data-feather="maximize"></i>
+					</a>
+				</li>
+
+			  <!-- Notificações -->
+			  <li class="dropdown notifications-menu">
+				<a href="#" class="waves-effect waves-light dropdown-toggle btn-info-light" data-bs-toggle="dropdown" title="Notificações">
+				  <i data-feather="bell"></i>
+				</a>
+				<ul class="dropdown-menu animated bounceIn">
+
+				  <li class="header">
+					<div class="p-20">
+						<div class="flexbox">
+							<div>
+								<h4 class="mb-0 mt-0">Notificações</h4>
+							</div>
+							<div>
+								<a href="#" class="text-danger">Limpar</a>
+							</div>
+						</div>
+					</div>
+				  </li>
+
+				  <li>
+					<!-- menu interno: contém os dados reais -->
+					<ul class="menu sm-scrol">
+					  <li>
+						<a href="#">
+						  <i class="fa fa-users text-info"></i> Notificação teste etc e tal etc e tal etc e tal
+						</a>
+					  </li>
+					  <li>
+						<a href="#">
+						  <i class="fa fa-warning text-warning"></i> Notificação teste etc e tal etc e tal etc e tal
+						</a>
+					  </li>
+					  <li>
+						<a href="#">
+						  <i class="fa fa-shopping-cart text-success"></i> Notificação teste etc e tal etc e tal etc e tal
+						</a>
+					  </li>
+					</ul>
+				  </li>
+				  <li class="footer">
+					  <a href="#">Visualizar todas</a>
+				  </li>
+				</ul>
+			  </li>	
+
+			  <!-- Menu Usuário -->
+			  <li class="dropdown user user-menu">
+				<a href="#" class="waves-effect waves-light dropdown-toggle w-auto l-h-12 bg-transparent py-0 no-shadow" data-bs-toggle="dropdown" title="User">
+					<div class="d-flex pt-1">
+						<div class="text-end me-10">
+							<p class="pt-5 fs-14 mb-0 fw-700 text-primary">Rodrigo R.</p>
+							<small class="fs-10 mb-0 text-uppercase text-mute">Usuário ROOT</small>
+						</div>
+						<img src="{{ url_for('static', filename='images/avatar/avatar-1.png')}}" class="avatar rounded-10 bg-primary-light h-40 w-40" alt="" />
+					</div>
+				</a>
+				<ul class="dropdown-menu animated flipInX">
+				  <li class="user-body">
+					 <a class="dropdown-item" href="#"><i class="ti-user text-muted me-2"></i> Perfil</a>
+					 <a class="dropdown-item" href="#"><i class="ti-wallet text-muted me-2"></i> Minha Carteira</a>
+					 <a class="dropdown-item" href="#"><i class="ti-settings text-muted me-2"></i> Configurações</a>
+					 <div class="dropdown-divider"></div>
+					 <a class="dropdown-item" href="#"><i class="ti-lock text-muted me-2"></i> Sair</a>
+				  </li>
+				</ul>
+			  </li>	
+
+			</ul>
+		  </div>
+		</nav>
+	  </div>
+  </header>
+  <nav class="main-nav" role="navigation">
+
+	  <!-- Menu Mobile - Alternância entre Hamburger/Normal -->
+	  <input id="main-menu-state" type="checkbox" />
+	  <label class="main-menu-btn" for="main-menu-state">
+		<span class="main-menu-btn-icon"></span> Alternar a visibilidade do Menu
+	  </label>
+
+	  <!-- Menu Principal -->
+	  <ul id="main-menu" class="sm sm-blue"> 
+		 
+		<li><a href="#"><i data-feather="monitor"></i>Dashboard</a>
+			<ul> 
+				<li><a href="index.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dashboard 1</a></li>
+				<li><a href="index2.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dashboard 2</a></li>
+				<li><a href="index3.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dashboard 3</a></li>
+			</ul>
+		</li>
+
+	  </ul>
+	</nav>
+    
+  <div class="content-wrapper">
+	  <div class="container-full">
+		<!-- Content Header (Page header) -->	  
+		<div class="content-header">
+			<div class="d-flex align-items-center">
+				<div class="me-auto">
+					<!-- Breadcrumbs -->
+					<div class="d-inline-block align-items-center">
+						<nav>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{{ url_for('principal') }}"><i class="mdi mdi-home-outline"></i></a></li>
+								<li class="breadcrumb-item" aria-current="page">Dashboard</li>
+								<li class="breadcrumb-item active" aria-current="page">Visualização</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		{% block conteudo %}
+
+		{% endblock conteudo %}
+	  
+	  </div>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Rodapé -->
+	<footer class="main-footer">
+	  &copy; <script>document.write(new Date().getFullYear())</script> Desenvolvido por <a href="https://www.rorampy.com/">rorampy</a>. Todos os direitos reservados.
+  	</footer>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar">
+	  
+	<div class="rpanel-title"><span class="pull-right btn btn-circle btn-danger" data-toggle="control-sidebar"><i class="ion ion-close text-white"></i></span> </div>  <!-- Create the tabs -->
+    <ul class="nav nav-tabs control-sidebar-tabs">
+      <li class="nav-item"><a href="#control-sidebar-home-tab" data-bs-toggle="tab"><i class="mdi mdi-message-text"></i></a></li>
+      <li class="nav-item"><a href="#control-sidebar-settings-tab" data-bs-toggle="tab"><i class="mdi mdi-playlist-check"></i></a></li>
+    </ul>
+
+  </aside>
+  <!-- /.control-sidebar -->
+  
+  <!-- Adicione o plano de fundo da barra lateral. Este div deve ser colocado imediatamente após a barra lateral de controle -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+	
+	<!-- Vendor JS -->
+	<script src="{{ url_for('static', filename='js/vendors.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/pages/chat-popup.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/icons/feather-icons/feather.min.js') }}"></script>	
+	
+	<!-- JS do tema -->
+	<script src="{{ url_for('static', filename='js/demo.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.smartmenus.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/menus.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/template.js') }}"></script>
+	
+</body>
+</html>
